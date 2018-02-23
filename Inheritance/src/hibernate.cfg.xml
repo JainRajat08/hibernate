@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Create the database schema -->
+		<property name="hbm2ddl.auto">create</property>
+		
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
+		
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		
+		<!-- JDBC connection pool {use the built-in} -->
+        <property name="connection.pool_size">2</property>
+		
+		<!-- Names the annotated entity class -->
+		
+		<!-- Single table technique -->
+		<!-- <mapping class="singleTable.Vehicle" />
+		<mapping class="singleTable.TwoWheeler" />
+		<mapping class="singleTable.FourWheeler" /> -->
+		
+		<!-- Table per class technique -->
+		<!-- <mapping class="tablePerClass.Vehicle" />
+		<mapping class="tablePerClass.TwoWheeler" />
+		<mapping class="tablePerClass.FourWheeler" /> -->
+		
+		<!-- Joined technique -->
+		<mapping class="joined.Vehicle" />
+		<mapping class="joined.TwoWheeler" />
+		<mapping class="joined.FourWheeler" />
+
+		<!-- <property name="format_sql">true</property> <property name="use_sql_comments">true</property> -->
+	</session-factory>
+</hibernate-configuration>
